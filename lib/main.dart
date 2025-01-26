@@ -18,6 +18,6 @@ class IslamiApp extends StatelessWidget {
           HomeView.routeName: (context) => HomeView()
         },
         debugShowCheckedModeBanner: false,
-        home: HomeView());
+        home: Onboardingview());
   }
 }

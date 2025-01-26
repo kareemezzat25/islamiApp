@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:islami_app/homeview.dart';
 
@@ -12,52 +13,54 @@ class Onboardingview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const bodyStyle = TextStyle(
-        fontSize: 18.0, color: Color(0xFFE2BE7F), fontWeight: FontWeight.bold);
+    var bodyStyle = GoogleFonts.elMessiri(
+        fontSize: 18.0,
+        color: const Color(0xFFE2BE7F),
+        fontWeight: FontWeight.bold);
 
-    const pageDecoration = PageDecoration(
-      titleTextStyle: TextStyle(
+    var pageDecoration = PageDecoration(
+      titleTextStyle: GoogleFonts.elMessiri(
           fontSize: 24.0,
-          color: Color(0xFFE2BE7F),
+          color: const Color(0xFFE2BE7F),
           fontWeight: FontWeight.w700),
       bodyTextStyle: bodyStyle,
-      bodyPadding: EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 8.0),
-      pageColor: Color(0xFF202020),
+      bodyPadding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 8.0),
+      pageColor: const Color(0xFF202020),
       imageFlex: 3,
       imagePadding: EdgeInsets.zero,
     );
 
     return SafeArea(
       child: IntroductionScreen(
-        globalBackgroundColor: Color(0xFF202020),
+        globalBackgroundColor: const Color(0xFF202020),
         globalHeader: Image.asset(
           "assets/images/islamilogo.png",
           height: 150,
         ),
         dotsDecorator: DotsDecorator(
-            color: Color(0xFF707070),
-            activeColor: Color(0xFFE2BE7F),
+            color: const Color(0xFF707070),
+            activeColor: const Color(0xFFE2BE7F),
             activeShape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(28)),
-            activeSize: Size(10, 10)),
+            activeSize: const Size(10, 10)),
         showDoneButton: true,
         showNextButton: true,
         showBackButton: true,
-        back: Text(
+        back: const Text(
           "Back",
           style: TextStyle(
               fontSize: 16,
               color: Color(0xFFE2BE7F),
               fontWeight: FontWeight.bold),
         ),
-        next: Text(
+        next: const Text(
           "Next",
           style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
               color: Color(0xFFE2BE7F)),
         ),
-        done: Text(
+        done: const Text(
           "Finish",
           style: TextStyle(
               fontSize: 16,
