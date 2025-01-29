@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app/ahdaithview.dart';
-import 'package:islami_app/quranview.dart';
-import 'package:islami_app/radioview.dart';
-import 'package:islami_app/sebhaview.dart';
-import 'package:islami_app/timeview.dart';
+import 'package:islami_app/views/ahdaithview.dart';
+import 'package:islami_app/views/quranview.dart';
+import 'package:islami_app/views/radioview.dart';
+import 'package:islami_app/views/sebhaview.dart';
+import 'package:islami_app/views/timeview.dart';
 
 class HomeView extends StatefulWidget {
   static const String routeName = "Home";

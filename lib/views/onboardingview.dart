@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:islami_app/homeview.dart';
+import 'package:islami_app/views/homeview.dart';
 
 class Onboardingview extends StatelessWidget {
   static const String routeName = "OnBoarding";

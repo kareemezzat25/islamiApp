@@ -1,4 +1,33 @@
-class Suras {
+class SuraModel {
+  String nameAr;
+  String nameEn;
+  String numberVerses;
+  int index;
+
+  SuraModel(
+      {required this.nameAr,
+      required this.nameEn,
+      required this.index,
+      required this.numberVerses});
+
+  static SuraModel getSuraModel(int index) {
+    return SuraModel(
+        nameAr: arabicAuranSuras[index],
+        nameEn: englishQuranSurahs[index],
+        index: index,
+        numberVerses: AyaNumber[index]);
+  }
+
+  static SuraModel getSearchSuraModel(index) {
+    return SuraModel(
+        nameAr: arabicAuranSuras[index],
+        nameEn: englishQuranSurahs[index],
+        index: index,
+        numberVerses: AyaNumber[index]);
+  }
+
+  static List<String> searchResults = [];
+  static List<int> searchResultIndex = [];
   static List<String> arabicAuranSuras = [
     "الفاتحه",
     "البقرة",
@@ -231,6 +260,7 @@ class Suras {
     "Al-Falaq",
     "An-Nas"
   ];
+  // ignore: non_constant_identifier_names
   static List<String> AyaNumber = [
     '7',
     '286',
