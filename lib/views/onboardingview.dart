@@ -45,9 +45,9 @@ class Onboardingview extends StatelessWidget {
             activeSize: const Size(10, 10)),
         showDoneButton: true,
         showNextButton: true,
-        showBackButton: true,
-        back: const Text(
-          "Back",
+        showSkipButton: true,
+        skip: const Text(
+          "Skip",
           style: TextStyle(
               fontSize: 16,
               color: Color(0xFFE2BE7F),
