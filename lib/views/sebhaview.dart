@@ -20,61 +20,63 @@ class _SebhaviewState extends State<Sebhaview> {
   double turn = 0;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text("سَبِّحِ اسْمَ رَبِّكَ الأعلى ",
-            style: GoogleFonts.elMessiri(
-                color: Colors.white,
-                fontSize: 32,
-                fontWeight: FontWeight.bold)),
-        SizedBox(
-          height: 16,
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left: 50.0),
-          child: Image.asset("assets/images/sebhaHeader.png"),
-        ),
-        Stack(
-          alignment: Alignment.center,
-          children: [
-            AnimatedRotation(
-              turns: turn,
-              duration: Duration(milliseconds: 500),
-              child: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      turn += 1 / 30;
-                      counter++;
-                      if (counter == 30) {
-                        index++;
-                        counter = 0;
-                        if (index == tasbih.length) {
-                          index = 0;
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Text("سَبِّحِ اسْمَ رَبِّكَ الأعلى ",
+              style: GoogleFonts.elMessiri(
+                  color: Colors.white,
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold)),
+          SizedBox(
+            height: 16,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 50.0),
+            child: Image.asset("assets/images/sebhaHeader.png"),
+          ),
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              AnimatedRotation(
+                turns: turn,
+                duration: Duration(milliseconds: 500),
+                child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        turn += 1 / 30;
+                        counter++;
+                        if (counter == 30) {
+                          index++;
+                          counter = 0;
+                          if (index == tasbih.length) {
+                            index = 0;
+                          }
                         }
-                      }
-                    });
-                  },
-                  child: Image.asset("assets/images/SebhaBody.png")),
-            ),
-            Column(
-              children: [
-                Text(
-                  tasbih[index],
-                  style: GoogleFonts.aBeeZee(
-                      color: Colors.white,
-                      fontSize: 36,
-                      fontWeight: FontWeight.bold),
-                ),
-                Text("$counter",
+                      });
+                    },
+                    child: Image.asset("assets/images/SebhaBody.png")),
+              ),
+              Column(
+                children: [
+                  Text(
+                    tasbih[index],
                     style: GoogleFonts.aBeeZee(
+                        color: Colors.white,
                         fontSize: 36,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white))
-              ],
-            )
-          ],
-        )
-      ],
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Text("$counter",
+                      style: GoogleFonts.aBeeZee(
+                          fontSize: 36,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white))
+                ],
+              )
+            ],
+          )
+        ],
+      ),
     );
   }
 }

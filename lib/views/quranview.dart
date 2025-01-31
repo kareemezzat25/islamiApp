@@ -32,6 +32,13 @@ class _QuranviewState extends State<Quranview> {
               .add(SuraModel.englishQuranSurahs.indexOf(data));
         }
       }
+      for (String data in SuraModel.arabicAuranSuras) {
+        if (data.toLowerCase().contains(text.toLowerCase())) {
+          SuraModel.searchResults.add(data);
+          SuraModel.searchResultIndex
+              .add(SuraModel.arabicAuranSuras.indexOf(data));
+        }
+      }
     }
     setState(() {});
   }
