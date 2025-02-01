@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/models/suramodel.dart';
+import 'package:islami_app/views/suradetailsView.dart';
 import 'package:islami_app/widgets/suraitemhorizontal.dart';
 import 'package:islami_app/widgets/suraitemvertical.dart';
 
@@ -116,7 +117,13 @@ class _QuranviewState extends State<Quranview> {
       child: ListView.separated(
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            return SuraItemHorizontal(sura: SuraModel.getSuraModel(index));
+            return InkWell(
+                splashColor: Colors.transparent,
+                onTap: () {
+                  Navigator.pushNamed(context, SuraDetails.routeName,
+                      arguments: SuraModel.getSuraModel(index));
+                },
+                child: SuraItemHorizontal(sura: SuraModel.getSuraModel(index)));
           },
           separatorBuilder: (context, index) {
             return const SizedBox(
@@ -133,10 +140,25 @@ class _QuranviewState extends State<Quranview> {
           padding: EdgeInsets.zero,
           itemBuilder: (context, index) {
             return SuraModel.searchResults.isNotEmpty
-                ? SuraItemvertical(
-                    sura: SuraModel.getSearchSuraModel(
-                        SuraModel.searchResultIndex[index]))
-                : SuraItemvertical(sura: SuraModel.getSuraModel(index));
+                ? InkWell(
+                    splashColor: Colors.transparent,
+                    onTap: () {
+                      Navigator.pushNamed(context, SuraDetails.routeName,
+                          arguments: SuraModel.getSearchSuraModel(
+                              SuraModel.searchResultIndex[index]));
+                    },
+                    child: SuraItemvertical(
+                        sura: SuraModel.getSearchSuraModel(
+                            SuraModel.searchResultIndex[index])),
+                  )
+                : InkWell(
+                    splashColor: Colors.transparent,
+                    onTap: () {
+                      Navigator.pushNamed(context, SuraDetails.routeName,
+                          arguments: SuraModel.getSuraModel(index));
+                    },
+                    child:
+                        SuraItemvertical(sura: SuraModel.getSuraModel(index)));
           },
           separatorBuilder: (context, index) {
             return const Divider(
