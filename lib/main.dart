@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app/models/cache.dart';
 import 'package:islami_app/views/homeview.dart';
 import 'package:islami_app/views/onboardingview.dart';
 
-void main() {
-  runApp(IslamiApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Cache.init();
+  runApp(const IslamiApp());
 }
 
 class IslamiApp extends StatelessWidget {
@@ -12,12 +15,14 @@ class IslamiApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        initialRoute: Onboardingview.routeName,
+        initialRoute: Cache.getEligibilty() == true
+            ? HomeView.routeName
+            : Onboardingview.routeName,
         routes: {
-          Onboardingview.routeName: (context) => Onboardingview(),
+          Onboardingview.routeName: (context) => const Onboardingview(),
           HomeView.routeName: (context) => HomeView()
         },
         debugShowCheckedModeBanner: false,
-        home: Onboardingview());
+        home: const Onboardingview());
   }
 }
