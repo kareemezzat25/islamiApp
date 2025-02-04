@@ -24,14 +24,7 @@ class _SuraDetailsState extends State<SuraDetails> {
     return Scaffold(
         backgroundColor: const Color(0xFF202020),
         appBar: AppBar(
-          centerTitle: true,
-          titleTextStyle: GoogleFonts.aBeeZee(
-              color: const Color(0xFFE2BE7F),
-              fontSize: 20,
-              fontWeight: FontWeight.bold),
           title: Text(suraModel.nameEn),
-          iconTheme: const IconThemeData(color: Color(0xFFE2BE7F)),
-          backgroundColor: const Color(0xFF202020),
         ),
         body: Stack(
           alignment: Alignment.center,
@@ -43,10 +36,7 @@ class _SuraDetailsState extends State<SuraDetails> {
                 padding: const EdgeInsets.only(top: 16.0),
                 child: Text(
                   suraModel.nameAr,
-                  style: GoogleFonts.aBeeZee(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: const Color(0xFFE2BE7F)),
+                  style: Theme.of(context).textTheme.titleLarge!,
                 ),
               ),
               const SizedBox(
@@ -68,7 +58,7 @@ class _SuraDetailsState extends State<SuraDetails> {
                               padding: const EdgeInsets.symmetric(vertical: 12),
                               decoration: BoxDecoration(
                                   color: isSelected
-                                      ? const Color(0xFFE2BE7F)
+                                      ? Theme.of(context).primaryColor
                                       : const Color(0xFF202020),
                                   borderRadius: BorderRadius.circular(16),
                                   border: Border.all(
@@ -82,23 +72,25 @@ class _SuraDetailsState extends State<SuraDetails> {
                                     textAlign: TextAlign.center,
                                     TextSpan(children: [
                                       TextSpan(
-                                        text: verses[index],
-                                        style: GoogleFonts.aBeeZee(
-                                            color: isSelected
-                                                ? Colors.black
-                                                : const Color(0xFFE2BE7F),
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold),
-                                      ),
+                                          text: verses[index],
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyLarge!
+                                              .copyWith(
+                                                  color: isSelected
+                                                      ? Colors.black
+                                                      : Theme.of(context)
+                                                          .primaryColor)),
                                       TextSpan(
-                                        text: "(${index + 1})",
-                                        style: GoogleFonts.aBeeZee(
-                                            color: isSelected
-                                                ? Colors.black
-                                                : const Color(0xFFE2BE7F),
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold),
-                                      ),
+                                          text: "(${index + 1})",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyLarge!
+                                              .copyWith(
+                                                  color: isSelected
+                                                      ? Colors.black
+                                                      : Theme.of(context)
+                                                          .primaryColor)),
                                     ])),
                               )),
                         );

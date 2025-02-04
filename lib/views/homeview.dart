@@ -36,12 +36,6 @@ class _HomeViewState extends State<HomeView> {
         ),
         Scaffold(
             bottomNavigationBar: BottomNavigationBar(
-                type: BottomNavigationBarType.fixed,
-                backgroundColor: Color(0xFFE2BE7F),
-                showSelectedLabels: true,
-                showUnselectedLabels: false,
-                selectedItemColor: Colors.white,
-                unselectedItemColor: Color(0xFF202020),
                 currentIndex: selectedIndex,
                 onTap: (value) {
                   selectedIndex = value;

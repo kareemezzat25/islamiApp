@@ -58,10 +58,10 @@ class _QuranviewState extends State<Quranview> {
           if (SuraModel.searchResults.isEmpty &&
               searchController.text.isEmpty) ...[
             Text("Most Recently ",
-                style: GoogleFonts.aBeeZee(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w700,
-                    color: const Color(0xFFFEFFE8))),
+                style: Theme.of(context)
+                    .textTheme
+                    .bodySmall!
+                    .copyWith(color: const Color(0xFFFEFFE8))),
             const SizedBox(
               height: 10,
             ),
@@ -71,10 +71,10 @@ class _QuranviewState extends State<Quranview> {
             ),
           ],
           Text("Suras List",
-              style: GoogleFonts.aBeeZee(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: const Color(0xFFFEFFE8))),
+              style: Theme.of(context)
+                  .textTheme
+                  .bodySmall!
+                  .copyWith(color: const Color(0xFFFEFFE8))),
           const SizedBox(
             height: 16,
           ),
@@ -92,10 +92,10 @@ class _QuranviewState extends State<Quranview> {
       cursorRadius: const Radius.circular(12),
       decoration: InputDecoration(
         labelText: "Sura Name",
-        labelStyle: GoogleFonts.elMessiri(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-            color: const Color(0xFFFEFFE8)),
+        labelStyle: Theme.of(context)
+            .textTheme
+            .bodySmall!
+            .copyWith(color: const Color(0xFFFEFFE8)),
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
             borderSide: const BorderSide(color: Color(0xFFE2BE7F), width: 1)),
@@ -105,8 +105,8 @@ class _QuranviewState extends State<Quranview> {
         focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
             borderSide: const BorderSide(color: Color(0xFFE2BE7F), width: 1)),
-        prefixIcon: const ImageIcon(AssetImage("assets/images/quran.png"),
-            color: Color(0xFFE2BE7F)),
+        prefixIcon: ImageIcon(const AssetImage("assets/images/quran.png"),
+            color: Theme.of(context).primaryColor),
       ),
     );
   }

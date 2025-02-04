@@ -20,23 +20,23 @@ class SuraItemHorizontal extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Text(sura.nameEn,
-                  style: GoogleFonts.elMessiri(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: const Color(0xFF202020))),
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge!
+                      .copyWith(color: const Color(0xFF202020))),
               Text(
                 sura.nameAr,
-                style: GoogleFonts.elMessiri(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: const Color(0xFF202020)),
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge!
+                    .copyWith(color: const Color(0xFF202020)),
               ),
               Text(
                 "${sura.numberVerses} Verses",
-                style: GoogleFonts.elMessiri(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: const Color(0xFF202020)),
+                style: Theme.of(context)
+                    .textTheme
+                    .titleSmall!
+                    .copyWith(color: const Color(0xFF202020)),
               )
             ],
           ),

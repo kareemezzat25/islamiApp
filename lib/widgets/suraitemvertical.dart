@@ -16,10 +16,10 @@ class SuraItemvertical extends StatelessWidget {
             const Image(image: AssetImage("assets/images/Group.png")),
             Text(
               "${sura.index + 1}",
-              style: GoogleFonts.aBeeZee(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: const Color(0xFFFFFFFF)),
+              style: Theme.of(context)
+                  .textTheme
+                  .bodySmall!
+                  .copyWith(color: const Color(0xFFFFFFFF)),
             )
           ],
         ),
@@ -31,17 +31,17 @@ class SuraItemvertical extends StatelessWidget {
           children: [
             Text(
               sura.nameEn,
-              style: GoogleFonts.aBeeZee(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: const Color(0xFFFFFFFF)),
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyLarge!
+                  .copyWith(color: const Color(0xFFFFFFFF)),
             ),
             Text(
               "${sura.numberVerses} Verses",
-              style: GoogleFonts.aBeeZee(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: const Color(0xFFFFFFFF)),
+              style: Theme.of(context)
+                  .textTheme
+                  .bodySmall!
+                  .copyWith(color: const Color(0xFFFFFFFF)),
             ),
           ],
         ),
@@ -49,10 +49,10 @@ class SuraItemvertical extends StatelessWidget {
         Text(
           textAlign: TextAlign.right,
           sura.nameAr,
-          style: GoogleFonts.aBeeZee(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: const Color(0xFFFFFFFF)),
+          style: Theme.of(context)
+              .textTheme
+              .bodyLarge!
+              .copyWith(color: const Color(0xFFFFFFFF)),
         )
       ],
     );

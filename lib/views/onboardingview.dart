@@ -14,16 +14,9 @@ class Onboardingview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var bodyStyle = GoogleFonts.elMessiri(
-        fontSize: 18.0,
-        color: const Color(0xFFE2BE7F),
-        fontWeight: FontWeight.bold);
-
+    var bodyStyle = Theme.of(context).textTheme.bodyMedium!;
     var pageDecoration = PageDecoration(
-      titleTextStyle: GoogleFonts.elMessiri(
-          fontSize: 24.0,
-          color: const Color(0xFFE2BE7F),
-          fontWeight: FontWeight.w700),
+      titleTextStyle: Theme.of(context).textTheme.titleLarge!,
       bodyTextStyle: bodyStyle,
       bodyPadding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 8.0),
       pageColor: const Color(0xFF202020),
@@ -47,26 +40,17 @@ class Onboardingview extends StatelessWidget {
         showDoneButton: true,
         showNextButton: true,
         showSkipButton: true,
-        skip: const Text(
+        skip: Text(
           "Skip",
-          style: TextStyle(
-              fontSize: 16,
-              color: Color(0xFFE2BE7F),
-              fontWeight: FontWeight.bold),
+          style: Theme.of(context).textTheme.bodySmall,
         ),
-        next: const Text(
+        next: Text(
           "Next",
-          style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: Color(0xFFE2BE7F)),
+          style: Theme.of(context).textTheme.bodySmall,
         ),
-        done: const Text(
+        done: Text(
           "Finish",
-          style: TextStyle(
-              fontSize: 16,
-              color: Color(0xFFE2BE7F),
-              fontWeight: FontWeight.bold),
+          style: Theme.of(context).textTheme.bodySmall,
         ),
         onDone: () {
           Cache.saveEligibilty();
