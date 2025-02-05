@@ -68,30 +68,34 @@ class _SuraDetailsState extends State<SuraDetails> {
                                           : const Color(0xFFE2BE7F))),
                               child: Directionality(
                                 textDirection: TextDirection.rtl,
-                                child: Text.rich(
-                                    textAlign: TextAlign.center,
-                                    TextSpan(children: [
-                                      TextSpan(
-                                          text: verses[index],
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .bodyLarge!
-                                              .copyWith(
-                                                  color: isSelected
-                                                      ? Colors.black
-                                                      : Theme.of(context)
-                                                          .primaryColor)),
-                                      TextSpan(
-                                          text: "(${index + 1})",
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .bodyLarge!
-                                              .copyWith(
-                                                  color: isSelected
-                                                      ? Colors.black
-                                                      : Theme.of(context)
-                                                          .primaryColor)),
-                                    ])),
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 4.0),
+                                  child: Text.rich(
+                                      textAlign: TextAlign.center,
+                                      TextSpan(children: [
+                                        TextSpan(
+                                            text: verses[index],
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodyLarge!
+                                                .copyWith(
+                                                    color: isSelected
+                                                        ? Colors.black
+                                                        : Theme.of(context)
+                                                            .primaryColor)),
+                                        TextSpan(
+                                            text: "(${index + 1})",
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodyLarge!
+                                                .copyWith(
+                                                    color: isSelected
+                                                        ? Colors.black
+                                                        : Theme.of(context)
+                                                            .primaryColor)),
+                                      ])),
+                                ),
                               )),
                         );
                       },
