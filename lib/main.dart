@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/models/cache.dart';
 import 'package:islami_app/models/mytheme.dart';
 import 'package:islami_app/views/hadith-detailsview.dart';
@@ -28,7 +27,7 @@ class IslamiApp extends StatelessWidget {
           Onboardingview.routeName: (context) => const Onboardingview(),
           HomeView.routeName: (context) => HomeView(),
           SuraDetails.routeName: (context) => const SuraDetails(),
-          HadethDetails.routeName: (context) => HadethDetails()
+          HadethDetails.routeName: (context) => const HadethDetails()
         },
         debugShowCheckedModeBanner: false,
         home: const Onboardingview());

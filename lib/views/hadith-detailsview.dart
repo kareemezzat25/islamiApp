@@ -3,7 +3,7 @@ import 'package:islami_app/models/hadethmodel.dart';
 
 class HadethDetails extends StatelessWidget {
   static const String routeName = "HadethDetails";
-  HadethDetails({super.key});
+  const HadethDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class HadethDetails extends StatelessWidget {
             ),
             Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 18,
                 ),
                 Text(
@@ -28,15 +28,22 @@ class HadethDetails extends StatelessWidget {
                   maxLines: 2,
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 42,
                 ),
-                Directionality(
-                  textDirection: TextDirection.rtl,
+                Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 30.0, right: 30),
-                    child: Text(hadethModel.content.first,
-                        style: Theme.of(context).textTheme.bodyMedium),
+                    padding:
+                        const EdgeInsets.only(left: 30, right: 30, bottom: 94),
+                    child: ListView.builder(
+                        itemCount: hadethModel.content.length,
+                        itemBuilder: (context, index) {
+                          return Directionality(
+                            textDirection: TextDirection.rtl,
+                            child: Text(hadethModel.content[index],
+                                style: Theme.of(context).textTheme.bodyMedium),
+                          );
+                        }),
                   ),
                 ),
               ],
