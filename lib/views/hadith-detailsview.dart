@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami_app/models/hadethmodel.dart';
 
 class HadethDetails extends StatelessWidget {
@@ -20,16 +21,16 @@ class HadethDetails extends StatelessWidget {
             ),
             Column(
               children: [
-                const SizedBox(
-                  height: 18,
+                SizedBox(
+                  height: 18.h,
                 ),
                 Text(
                   hadethModel.title,
                   maxLines: 2,
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
-                const SizedBox(
-                  height: 42,
+                SizedBox(
+                  height: 42.h,
                 ),
                 Expanded(
                   child: Padding(

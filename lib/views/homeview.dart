@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami_app/views/ahdaithview.dart';
 import 'package:islami_app/views/quranview.dart';
 import 'package:islami_app/views/radioview.dart';
@@ -18,9 +19,9 @@ class _HomeViewState extends State<HomeView> {
   int selectedIndex = 0;
   List<Widget> views = [
     Quranview(),
-    Ahdaithview(),
+    const Ahdaithview(),
     Sebhaview(),
-    Radioview(),
+    const Radioview(),
     Timeview()
   ];
 
@@ -81,10 +82,10 @@ class _HomeViewState extends State<HomeView> {
     return BottomNavigationBarItem(
         icon: selectedIndex == index
             ? Container(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 6.h),
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(66),
-                    color: Color(0xFF202020).withOpacity(0.6)),
+                    borderRadius: BorderRadius.circular(66.r),
+                    color: const Color(0xFF202020).withOpacity(0.6)),
                 child: ImageIcon(AssetImage("assets/images/$image.png")))
             : ImageIcon(AssetImage("assets/images/$image.png")),
         label: label);

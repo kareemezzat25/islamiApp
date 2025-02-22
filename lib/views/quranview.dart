@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:islami_app/models/suramodel.dart';
 import 'package:islami_app/views/suradetailsView.dart';
@@ -52,8 +53,8 @@ class _QuranviewState extends State<Quranview> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           searchSura(),
-          const SizedBox(
-            height: 20,
+          SizedBox(
+            height: 20.h,
           ),
           if (SuraModel.searchResults.isEmpty &&
               searchController.text.isEmpty) ...[
@@ -62,12 +63,12 @@ class _QuranviewState extends State<Quranview> {
                     .textTheme
                     .bodySmall!
                     .copyWith(color: const Color(0xFFFEFFE8))),
-            const SizedBox(
-              height: 10,
+            SizedBox(
+              height: 10.h,
             ),
             suraHorizontalList(),
-            const SizedBox(
-              height: 12,
+            SizedBox(
+              height: 12.h,
             ),
           ],
           Text("Suras List",
@@ -75,8 +76,8 @@ class _QuranviewState extends State<Quranview> {
                   .textTheme
                   .bodySmall!
                   .copyWith(color: const Color(0xFFFEFFE8))),
-          const SizedBox(
-            height: 16,
+          SizedBox(
+            height: 16.h,
           ),
           suraVerticalList()
         ],
@@ -86,10 +87,10 @@ class _QuranviewState extends State<Quranview> {
 
   Widget searchSura() {
     return TextField(
-      style: const TextStyle(fontSize: 18, color: Color(0xFFE2BE7F)),
+      style: TextStyle(fontSize: 18.sp, color: Color(0xFFE2BE7F)),
       controller: searchController,
       cursorColor: const Color(0xFFE2BE7F),
-      cursorRadius: const Radius.circular(12),
+      cursorRadius: Radius.circular(12.r),
       decoration: InputDecoration(
         labelText: "Sura Name",
         labelStyle: Theme.of(context)
@@ -97,13 +98,13 @@ class _QuranviewState extends State<Quranview> {
             .bodySmall!
             .copyWith(color: const Color(0xFFFEFFE8)),
         border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(12.r),
             borderSide: const BorderSide(color: Color(0xFFE2BE7F), width: 1)),
         enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(12.r),
             borderSide: const BorderSide(color: Color(0xFFE2BE7F))),
         focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(12.r),
             borderSide: const BorderSide(color: Color(0xFFE2BE7F), width: 1)),
         prefixIcon: ImageIcon(const AssetImage("assets/images/quran.png"),
             color: Theme.of(context).primaryColor),
@@ -113,7 +114,7 @@ class _QuranviewState extends State<Quranview> {
 
   Widget suraHorizontalList() {
     return SizedBox(
-      height: 150,
+      height: 150.h,
       child: ListView.separated(
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
@@ -126,8 +127,8 @@ class _QuranviewState extends State<Quranview> {
                 child: SuraItemHorizontal(sura: SuraModel.getSuraModel(index)));
           },
           separatorBuilder: (context, index) {
-            return const SizedBox(
-              width: 10,
+            return SizedBox(
+              width: 10.w,
             );
           },
           itemCount: SuraModel.arabicAuranSuras.length),

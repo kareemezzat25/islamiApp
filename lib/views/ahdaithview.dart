@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami_app/models/hadethmodel.dart';
 import 'package:islami_app/views/hadith-detailsview.dart';
 
@@ -59,8 +60,8 @@ class _AhdaithviewState extends State<Ahdaithview> {
                                         .copyWith(
                                             color: const Color(0xFF202020)),
                                   ),
-                                  const SizedBox(
-                                    height: 12,
+                                  SizedBox(
+                                    height: 12.h,
                                   ),
                                   Text(
                                     ahadith.content.first,
@@ -85,8 +86,8 @@ class _AhdaithviewState extends State<Ahdaithview> {
             }).toList(),
           ),
         ),
-        const SizedBox(
-          height: 12,
+        SizedBox(
+          height: 12.h,
         )
       ],
     );

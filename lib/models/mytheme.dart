@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyThemeData {
@@ -9,15 +10,25 @@ class MyThemeData {
       scaffoldBackgroundColor: Colors.transparent,
       textTheme: TextTheme(
           titleLarge: GoogleFonts.aBeeZee(
-              fontSize: 24, fontWeight: FontWeight.bold, color: primarycolor),
+              fontSize: 24.sp,
+              fontWeight: FontWeight.bold,
+              color: primarycolor),
           titleSmall: GoogleFonts.aBeeZee(
-              fontSize: 14, fontWeight: FontWeight.bold, color: primarycolor),
+              fontSize: 14.sp,
+              fontWeight: FontWeight.bold,
+              color: primarycolor),
           bodyLarge: GoogleFonts.aBeeZee(
-              fontSize: 20, fontWeight: FontWeight.bold, color: primarycolor),
+              fontSize: 20.sp,
+              fontWeight: FontWeight.bold,
+              color: primarycolor),
           bodyMedium: GoogleFonts.aBeeZee(
-              fontSize: 18, fontWeight: FontWeight.bold, color: primarycolor),
+              fontSize: 18.sp,
+              fontWeight: FontWeight.bold,
+              color: primarycolor),
           bodySmall: GoogleFonts.aBeeZee(
-              fontSize: 16, fontWeight: FontWeight.bold, color: primarycolor)),
+              fontSize: 16.sp,
+              fontWeight: FontWeight.bold,
+              color: primarycolor)),
       appBarTheme: AppBarTheme(
           iconTheme: IconThemeData(color: primarycolor),
           centerTitle: true,
