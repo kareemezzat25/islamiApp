@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:islami_app/models/praytime.dart';
+import 'package:islami_app/models/praytimemodel.dart';
 
 class PrayTimeItem extends StatelessWidget {
   PrayTime prayTime;

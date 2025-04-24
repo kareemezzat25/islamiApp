@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami_app/models/cache.dart';
 import 'package:islami_app/models/mytheme.dart';
+import 'package:islami_app/views/azkarview.dart';
 import 'package:islami_app/views/hadith-detailsview.dart';
 import 'package:islami_app/views/homeview.dart';
 import 'package:islami_app/views/onboardingview.dart';
@@ -34,7 +35,8 @@ class IslamiApp extends StatelessWidget {
                 Onboardingview.routeName: (context) => const Onboardingview(),
                 HomeView.routeName: (context) => HomeView(),
                 SuraDetails.routeName: (context) => const SuraDetails(),
-                HadethDetails.routeName: (context) => const HadethDetails()
+                HadethDetails.routeName: (context) => const HadethDetails(),
+                Azkarview.routeName: (context) => Azkarview()
               },
               debugShowCheckedModeBanner: false,
               home: const Onboardingview());

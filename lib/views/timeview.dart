@@ -5,7 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:islami_app/bloc/cubit.dart';
 import 'package:islami_app/bloc/states.dart';
-import 'package:islami_app/models/praytime.dart';
+import 'package:islami_app/models/mytheme.dart';
+import 'package:islami_app/models/praytimemodel.dart';
 import 'package:islami_app/repository/repo_impl.dart';
 import 'package:islami_app/widgets/azkaritem.dart';
 import 'package:islami_app/widgets/praytimeitem.dart';
@@ -60,17 +61,17 @@ class Timeview extends StatelessWidget {
                             return AlertDialog(
                               title: Text(
                                 "Error",
-                                style: GoogleFonts.inter(
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleLarge!
+                                    .copyWith(color: MyThemeData.blackColor),
                               ),
                               content: Text(
                                 state.messageError,
-                                style: GoogleFonts.inter(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.grey[850]),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .copyWith(color: Colors.grey[850]),
                               ),
                               actions: [
                                 ElevatedButton(
@@ -84,10 +85,10 @@ class Timeview extends StatelessWidget {
                                                 BorderRadius.circular(16.r))),
                                     child: Text(
                                       "Ok",
-                                      style: GoogleFonts.aBeeZee(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.white),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .copyWith(color: Colors.white),
                                     ))
                               ],
                             );
