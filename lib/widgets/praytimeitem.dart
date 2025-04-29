@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami_app/models/praytimemodel.dart';
@@ -21,7 +22,7 @@ class PrayTimeItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Text(
-            prayTime.sallahname,
+            prayTime.sallahname.tr(),
             style: Theme.of(context)
                 .textTheme
                 .bodySmall!

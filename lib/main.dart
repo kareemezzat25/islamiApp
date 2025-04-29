@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami_app/models/cache.dart';
@@ -14,8 +15,16 @@ import 'package:provider/provider.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Cache.init();
+  await EasyLocalization.ensureInitialized();
+
   runApp(ChangeNotifierProvider(
-      create: (context) => Radioprovider(), child: const IslamiApp()));
+      create: (context) => Radioprovider(),
+      child: EasyLocalization(
+          supportedLocales: const [Locale('en'), Locale('ar')],
+          path: 'assets/translations',
+          fallbackLocale: const Locale('en'),
+          useOnlyLangCode: true,
+          child: const IslamiApp())));
 }
 
 class IslamiApp extends StatelessWidget {
@@ -30,6 +39,9 @@ class IslamiApp extends StatelessWidget {
         // Use builder only if you need to use library outside ScreenUtilInit context
         builder: (_, child) {
           return MaterialApp(
+              locale: context.locale,
+              supportedLocales: context.supportedLocales,
+              localizationsDelegates: context.localizationDelegates,
               theme: MyThemeData.lightTheme,
               themeMode: ThemeMode.light,
               initialRoute: Cache.getEligibilty() == true

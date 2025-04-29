@@ -1,5 +1,6 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 import 'package:islami_app/models/suramodel.dart';
 
 class SuraItemvertical extends StatelessWidget {
@@ -36,13 +37,20 @@ class SuraItemvertical extends StatelessWidget {
                   .bodyLarge!
                   .copyWith(color: const Color(0xFFFFFFFF)),
             ),
-            Text(
-              "${sura.numberVerses} Verses",
-              style: Theme.of(context)
-                  .textTheme
-                  .bodySmall!
-                  .copyWith(color: const Color(0xFFFFFFFF)),
-            ),
+            Text.rich(TextSpan(children: [
+              TextSpan(
+                  text: sura.numberVerses,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodySmall!
+                      .copyWith(color: const Color(0xFFFFFFFF))),
+              TextSpan(
+                  text: "verses".tr(),
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodySmall!
+                      .copyWith(color: const Color(0xFFFFFFFF)))
+            ])),
           ],
         ),
         const Spacer(),

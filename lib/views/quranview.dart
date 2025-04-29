@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:islami_app/main.dart';
+import 'package:islami_app/models/mytheme.dart';
 import 'package:islami_app/models/suramodel.dart';
 import 'package:islami_app/views/suradetailsView.dart';
 import 'package:islami_app/widgets/suraitemhorizontal.dart';
@@ -52,13 +54,43 @@ class _QuranviewState extends State<Quranview> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          searchSura(),
+          Row(
+            children: [
+              Expanded(child: searchSura()),
+              SizedBox(
+                width: 8.w,
+              ),
+              InkWell(
+                onTap: () {
+                  context.setLocale(
+                      Locale(context.locale.toString() == "en" ? "ar" : "en"));
+                },
+                child: Container(
+                  height: 65.h,
+                  width: MediaQuery.of(context).size.width * 0.15,
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                      color: MyThemeData.primarycolor,
+                      borderRadius: BorderRadius.circular(8)),
+                  child: Center(
+                    child: Text(
+                      context.locale.toString() == "en" ? "ع" : "En",
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleLarge!
+                          .copyWith(color: MyThemeData.blackColor),
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
           SizedBox(
             height: 20.h,
           ),
           if (SuraModel.searchResults.isEmpty &&
               searchController.text.isEmpty) ...[
-            Text("Most Recently ",
+            Text("most_recently".tr(),
                 style: Theme.of(context)
                     .textTheme
                     .bodySmall!
@@ -71,7 +103,7 @@ class _QuranviewState extends State<Quranview> {
               height: 12.h,
             ),
           ],
-          Text("Suras List",
+          Text("sura_list".tr(),
               style: Theme.of(context)
                   .textTheme
                   .bodySmall!
@@ -92,7 +124,7 @@ class _QuranviewState extends State<Quranview> {
       cursorColor: const Color(0xFFE2BE7F),
       cursorRadius: Radius.circular(12.r),
       decoration: InputDecoration(
-        labelText: "Sura Name",
+        labelText: "sura_name".tr(),
         labelStyle: Theme.of(context)
             .textTheme
             .bodySmall!

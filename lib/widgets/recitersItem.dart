@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami_app/models/mytheme.dart';
@@ -43,7 +44,7 @@ class RecitersItem extends StatelessWidget {
             Text.rich(
               TextSpan(children: [
                 TextSpan(
-                    text: "surah total: ",
+                    text: "surahtotal".tr(),
                     style: Theme.of(context)
                         .textTheme
                         .bodyMedium!

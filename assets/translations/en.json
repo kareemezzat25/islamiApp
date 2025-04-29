@@ -1,0 +1,22 @@
+{
+    "quran":"Quran",
+    "hadith":"Hadith",
+    "sebha":"Sebha",
+    "radio":"Radio",
+    "time":"Time",
+    "sura_name":"Sura Name",
+    "most_recently":"Most Recently",
+    "sura_list":"Suras List",
+    "verses":" Verses",
+    "reciters":"Reciters",
+    "surahtotal":"Surah Total: ",
+    "pray_time":"Pray Time",
+    "Fajr":"Fajr",
+    "Dhuhr":"Dhuhr",
+    "Asr":"Asr",
+    "Maghrib":"Maghrib",
+    "Isha":"Isha",
+    "azkar":"Azkar",
+    "evening_azkar":"Evening Azkar",
+    "morning_azkar":"Morning Azkar"
+}

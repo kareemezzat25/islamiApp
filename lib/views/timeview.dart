@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -148,7 +149,7 @@ class Timeview extends StatelessWidget {
                             Column(
                               children: [
                                 Text(
-                                  "Pray Time",
+                                  "pray_time".tr(),
                                   style: Theme.of(context)
                                       .textTheme
                                       .bodyLarge!
@@ -249,7 +250,7 @@ class Timeview extends StatelessWidget {
               height: 20.h,
             ),
             Text(
-              "Azkar",
+              "azkar".tr(),
               style: Theme.of(context)
                   .textTheme
                   .bodySmall!
@@ -263,10 +264,10 @@ class Timeview extends StatelessWidget {
               children: [
                 AzkarItem(
                     azkarImage: "assets/images/eveningAzkar.png",
-                    azkarText: "Evening Azkar"),
+                    azkarText: "evening_azkar".tr()),
                 AzkarItem(
                     azkarImage: "assets/images/morningAzkar.png",
-                    azkarText: "Morning Azkar")
+                    azkarText: "morning_azkar".tr())
               ],
             )
           ],

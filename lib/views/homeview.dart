@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami_app/views/ahdaithview.dart';
@@ -43,11 +44,11 @@ class _HomeViewState extends State<HomeView> {
                   setState(() {});
                 },
                 items: [
-                  ItemNavigationBottom("quran", "Quran", 0),
-                  ItemNavigationBottom("hadith", "Hadith", 1),
-                  ItemNavigationBottom("sebha", "Sebha", 2),
-                  ItemNavigationBottom("radio", "Radio", 3),
-                  ItemNavigationBottom("time", "Time", 4),
+                  ItemNavigationBottom("quran", "quran".tr(), 0),
+                  ItemNavigationBottom("hadith", "hadith".tr(), 1),
+                  ItemNavigationBottom("sebha", "sebha".tr(), 2),
+                  ItemNavigationBottom("radio", "radio".tr(), 3),
+                  ItemNavigationBottom("time", "time".tr(), 4),
                 ]),
             backgroundColor: Colors.transparent,
             body: Column(

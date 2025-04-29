@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:islami_app/models/mytheme.dart';
 import 'package:islami_app/models/suramodel.dart';
 
 class SuraItemHorizontal extends StatelessWidget {
@@ -31,13 +33,20 @@ class SuraItemHorizontal extends StatelessWidget {
                     .titleLarge!
                     .copyWith(color: const Color(0xFF202020)),
               ),
-              Text(
-                "${sura.numberVerses} Verses",
-                style: Theme.of(context)
-                    .textTheme
-                    .titleSmall!
-                    .copyWith(color: const Color(0xFF202020)),
-              )
+              Text.rich(TextSpan(children: [
+                TextSpan(
+                    text: sura.numberVerses,
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodySmall!
+                        .copyWith(color: MyThemeData.blackColor)),
+                TextSpan(
+                    text: "verses".tr(),
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodySmall!
+                        .copyWith(color: MyThemeData.blackColor))
+              ])),
             ],
           ),
           Image.asset("assets/images/itemhorizontal.png")

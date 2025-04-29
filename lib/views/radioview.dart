@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -39,12 +40,12 @@ class Radioview extends StatelessWidget {
                         .textTheme
                         .bodySmall!
                         .copyWith(fontWeight: FontWeight.w700),
-                    tabs: const [
+                    tabs: [
                       Tab(
-                        text: "Radio",
+                        text: "radio".tr(),
                       ),
                       Tab(
-                        text: "Reciters",
+                        text: "reciters".tr(),
                       )
                     ]),
               ),
