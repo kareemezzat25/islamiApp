@@ -7,6 +7,7 @@ import 'package:islami_app/views/azkarview.dart';
 import 'package:islami_app/views/hadith-detailsview.dart';
 import 'package:islami_app/views/homeview.dart';
 import 'package:islami_app/views/onboardingview.dart';
+import 'package:islami_app/views/reciterscontentview.dart';
 import 'package:islami_app/views/suradetailsView.dart';
 import 'package:provider/provider.dart';
 
@@ -39,7 +40,8 @@ class IslamiApp extends StatelessWidget {
                 HomeView.routeName: (context) => HomeView(),
                 SuraDetails.routeName: (context) => const SuraDetails(),
                 HadethDetails.routeName: (context) => const HadethDetails(),
-                Azkarview.routeName: (context) => Azkarview()
+                Azkarview.routeName: (context) => const Azkarview(),
+                ReciterContent.routeName: (context) => const ReciterContent()
               },
               debugShowCheckedModeBanner: false,
               home: const Onboardingview());

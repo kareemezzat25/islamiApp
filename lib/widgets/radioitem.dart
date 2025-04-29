@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami_app/models/mytheme.dart';
@@ -22,7 +23,7 @@ class RadioItem extends StatelessWidget {
             ? Image.asset(
                 "assets/images/radioPlay.png",
                 width: 390.w,
-                height: 176.h,
+                height: 178.h,
                 fit: BoxFit.fill,
               )
             : Image.asset(
@@ -31,56 +32,66 @@ class RadioItem extends StatelessWidget {
                 height: 133.h,
                 fit: BoxFit.fill,
               ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: 16.h,
-            ),
-            Text(
-              name,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyLarge!
-                  .copyWith(color: MyThemeData.blackColor),
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+        Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                IconButton(
-                    onPressed: () {
-                      radioProvider.play(url);
-                    },
-                    icon: Icon(
-                      (radioProvider.isPlaying &&
-                              radioProvider.currentPlayingUrl == url)
-                          ? Icons.pause
-                          : Icons.play_arrow,
-                      color: MyThemeData.blackColor,
-                      size: 44,
-                    )),
-                IconButton(
-                    onPressed: () {
-                      isVolumeUp = !isVolumeUp;
-                      radioProvider.setVolume(isVolumeUp ? 1 : 0);
-                    },
-                    icon: isVolumeUp
-                        ? Icon(
-                            Icons.volume_up,
-                            color: MyThemeData.blackColor,
-                            size: 30,
-                          )
-                        : Icon(
-                            Icons.volume_off,
-                            color: MyThemeData.blackColor,
-                            size: 30,
-                          ))
+                SizedBox(
+                  height: 16.h,
+                ),
+                Directionality(
+                  textDirection: TextDirection.rtl,
+                  child: AutoSizeText(
+                    name,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyLarge!
+                        .copyWith(color: MyThemeData.blackColor),
+                  ),
+                ),
+                SizedBox(
+                  height: 16.h,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    IconButton(
+                        onPressed: () {
+                          radioProvider.play(url);
+                        },
+                        icon: Icon(
+                          (radioProvider.isPlaying &&
+                                  radioProvider.currentPlayingUrl == url)
+                              ? Icons.pause
+                              : Icons.play_arrow,
+                          color: MyThemeData.blackColor,
+                          size: 44,
+                        )),
+                    IconButton(
+                        onPressed: () {
+                          isVolumeUp = !isVolumeUp;
+                          radioProvider.setVolume(isVolumeUp ? 1 : 0);
+                        },
+                        icon: isVolumeUp
+                            ? Icon(
+                                Icons.volume_up,
+                                color: MyThemeData.blackColor,
+                                size: 30,
+                              )
+                            : Icon(
+                                Icons.volume_off,
+                                color: MyThemeData.blackColor,
+                                size: 30,
+                              ))
+                  ],
+                )
               ],
-            )
-          ],
+            ),
+          ),
         )
       ],
     );

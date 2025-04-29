@@ -7,6 +7,14 @@ class Radioprovider extends ChangeNotifier {
   AudioPlayer player = AudioPlayer();
   String? currentPlayingUrl;
 
+  Radioprovider() {
+    // Listen for when the audio finishes playing
+    player.onPlayerComplete.listen((event) {
+      isPlaying = false;
+      notifyListeners();
+    });
+  }
+
   Future<void> play(String url) async {
     if (url == currentPlayingUrl) {
       isPlaying ? await player.pause() : await player.resume();

@@ -19,3 +19,12 @@ class RadioErrorState extends HomeState {
   String messageError;
   RadioErrorState({required this.messageError});
 }
+
+class RecitersLoadingState extends HomeState {}
+
+class RecitersErrorState extends HomeState {
+  String messageError;
+  RecitersErrorState({required this.messageError});
+}
+
+class ReciterSuccessState extends HomeState {}
