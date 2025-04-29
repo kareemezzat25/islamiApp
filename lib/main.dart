@@ -2,16 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:islami_app/models/cache.dart';
 import 'package:islami_app/models/mytheme.dart';
+import 'package:islami_app/providers/radioprovider.dart';
 import 'package:islami_app/views/azkarview.dart';
 import 'package:islami_app/views/hadith-detailsview.dart';
 import 'package:islami_app/views/homeview.dart';
 import 'package:islami_app/views/onboardingview.dart';
 import 'package:islami_app/views/suradetailsView.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Cache.init();
-  runApp(const IslamiApp());
+  runApp(ChangeNotifierProvider(
+      create: (context) => Radioprovider(), child: const IslamiApp()));
 }
 
 class IslamiApp extends StatelessWidget {

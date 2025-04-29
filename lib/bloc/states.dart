@@ -10,3 +10,12 @@ class GetPrayTimeError extends HomeState {
 }
 
 class GetPrayTimeSuccess extends HomeState {}
+
+class RadioLoadingState extends HomeState {}
+
+class RadioSuccessState extends HomeState {}
+
+class RadioErrorState extends HomeState {
+  String messageError;
+  RadioErrorState({required this.messageError});
+}
